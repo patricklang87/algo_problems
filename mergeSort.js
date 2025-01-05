@@ -3,7 +3,7 @@
 // recursive function
 // time complexity: O (n log n)
 
-const arr = [8, 32, 1, 9, 57, 3, 15, 26, 11];
+const arr = [8, 32, 1, 9, 57, - 22, 3, 15, 0, 26, 11];
 
 // const merge = (leftArr, rightArr) => {
 //     const sortedArr = [];
@@ -33,24 +33,24 @@ const arr = [8, 32, 1, 9, 57, 3, 15, 26, 11];
 
 //implementing mergeSort again
 
-const merge = (leftArray, rightArray) => {
+const merge = (left, right) => {
     let sortedArr = [];
-    while (leftArray.length && rightArray.length) {
-        if (leftArray[0] > rightArray[0]) {
-            sortedArr.push(rightArray.shift())
+    while (left.length && right.length) {
+        if (left[0] < right[0]) {
+            sortedArr.push(left.shift());
         } else {
-            sortedArr.push(leftArray.shift())
+            sortedArr.push(right.shift());
         }
     }
-    return [...sortedArr, ...leftArray, ...rightArray];
+    return [...sortedArr, ...left, ...right];
 }
 
 const mergeSort = (arr) => {
     if (arr.length < 2) return arr;
-    const mid = Math.floor(arr.length / 2);
-    const leftArr = arr.slice(0, mid);
-    const rightArr = arr.slice(mid);
-    return merge(mergeSort(leftArr), mergeSort(rightArr))
+    let mid = Math.floor(arr.length / 2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+    return merge(mergeSort(left), mergeSort(right));
 }
 
 

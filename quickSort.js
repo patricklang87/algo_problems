@@ -56,20 +56,21 @@ const array2 = [-100, -99, -97, 40, 32, 3, 3, 3, 3, 3, 32, 1903, 32, -54];
 // };
 
 
-const quickSort = (arr) => {
-  if (arr.length < 2) return arr;
-  let left = [];
-  let right = [];
-  let pivot = arr.shift();
-  while (arr.length > 0) {
-    if (arr[0] < pivot) {
-      left.push(arr.shift());
-    } else {
-      right.push(arr.shift());
-    }
-  }
-  return [...quickSort(left), pivot, ...quickSort(right)];
-}
+// const quickSort = (arr) => {
+//   if (arr.length < 2) return arr;
+//   let left = [];
+//   let right = [];
+//   let pivot = arr.shift();
+//   while (arr.length > 0) {
+//     if (arr[0] < pivot) {
+//       left.push(arr.shift());
+//     } else {
+//       right.push(arr.shift());
+//     }
+//   }
+//   return [...quickSort(left), pivot, ...quickSort(right)];
+// }
+
 
 console.log(quickSort(array));
 console.log(quickSort(array2));

@@ -15,7 +15,6 @@ const createListNode = (arr, i = 0) => {
 let head = createListNode(array, 0);
 
 while (head) {
-    console.log(head.val);
     head = head.next
 }
 
